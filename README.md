@@ -11,15 +11,16 @@ On to the code:
 
 dual_walkers.py:
 
-         The point's motion in both directions (x and y) is determined by two separate, intertwined random walks. It has even chance of going left/right and up/down, but the step size in the x direction is equal to the y position, and vice-versa.
+The point's motion in both directions (x and y) is determined by two separate, intertwined random walks. It has even chance of going left/right and up/down, but the step size in the x direction is equal to the y position, and vice-versa.
 
-         The files produced by this script:
+The files produced by this script:
              return.mp4: an animation showing how this point likes to return to 0,0 and stay there (as step sizes in both directions are 0).
              runaway.png: after some milling about in the middle, the point strikes out in a diagonal direction.
              triangles.png: interesting repeating triangular pattern that appears occasionally.
              
 dual_walkers_prob.py:
-        The same idea as dual_walkers, except instead of step size, it's probability to go right (up) that depends on the position of the walk in the y (x) direction. Note the probability has to be less than one, so we divide by diagonal distance to the origin, and probability can't be negative, so we look at the absolute value of the position.
 
-        The files produced by this script:
+The same idea as dual_walkers, except instead of step size, it's probability to go right (up) that depends on the position of the walk in the y (x) direction. Note the probability has to be less than one, so we divide by diagonal distance to the origin, and probability can't be negative, so we look at the absolute value of the position.
+
+The files produced by this script:
             diag.mp4 and diag2.mp4: The point starts in the middle, then drifts more or less northeast. This could show that two walks, when working together in this way, produce something that looks 'on purpose,' or orderly. This could also be an artifact of the way I've ensured the probability is never greater than one (by dividing by distance to the origin). This is not my last vase.
