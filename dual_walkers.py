@@ -9,10 +9,12 @@ y = [np.random.uniform()]
 
 fig, ax = plt.subplots()
 ln, = plt.plot([], [], 'r-')
+pt, = plt.plot([], [], 'C0.')
 
 def init():
-    ax.set_xlim(-10,10)
-    ax.set_ylim(-10,10)
+    size = 10
+    ax.set_xlim(-size,size)
+    ax.set_ylim(-size,size)
     return ln,
 
 def update(frame):
@@ -24,8 +26,11 @@ def update(frame):
     y.append(y[-1] + step_y*direction[1])
 
     ln.set_data(x, y)
+    pt.set_data(x[-1], y[-1])
     return ln,
 
 ani = FuncAnimation(fig, update, frames=np.empty(it_max), init_func=init)
+
+ani.save("step_walker.mp4")
 
 plt.show()
