@@ -4,8 +4,10 @@ from matplotlib.animation import FuncAnimation, writers
 
 it_max = 100
 
-x = [np.random.uniform()-1/2]
-y = [np.random.uniform()-1/2]
+x = [0]
+y = [0]
+
+print(x,y)
 
 fig, ax = plt.subplots()
 ln, = plt.plot([], [], 'r-')
@@ -32,6 +34,6 @@ def update(frame):
 
 ani = FuncAnimation(fig, update, frames=np.empty(it_max), init_func=init)
 
-ani.save('diag2.mp4')
+#ani.save('diag2.mp4')
 
 plt.show()
